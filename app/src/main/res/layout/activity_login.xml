@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:background="@color/purpleclaro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=", LoginActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiaVertical1"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiaHorizontal1"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiaHorizontal2"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:text="Bienvenidos Perritos"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guiaHorizontal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/imagePerfil"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.4"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.2"
+        android:src="@drawable/perritod"
+        app:layout_constraintTop_toTopOf="@id/guiaHorizontal1"
+        app:layout_constraintEnd_toEndOf="@id/guiaVertical1"
+        />
+
+    <TextView
+        android:id="@+id/viewnombreperrito"
+        android:text="Nombre del perrito"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/guiaHorizontal2"
+        app:layout_constraintEnd_toEndOf="@id/guiaVertical1"/>
+
+    <EditText
+        android:id="@+id/editnombreperrito"
+        android:layout_width="0dp"
+        android:background="@color/white"
+        app:layout_constraintWidth_percent="0.6"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/viewnombreperrito"
+        app:layout_constraintEnd_toEndOf="@id/guiaVertical1"/>
+
+    <TextView
+        android:id="@+id/textViewRaza"
+        android:text="Raza"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editnombreperrito"
+        app:layout_constraintEnd_toEndOf="@id/guiaVertical1"
+        />
+
+    <EditText
+        android:id="@+id/editTextRaza"
+        android:layout_width="0dp"
+        android:background="@color/white"
+        app:layout_constraintWidth_percent="0.6"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewRaza"
+        app:layout_constraintEnd_toEndOf="@id/guiaVertical1"/>
+
+    <TextView
+        android:id="@+id/textViewEdad"
+        android:text="Edad"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editTextRaza"
+        app:layout_constraintEnd_toEndOf="@id/guiaVertical1"
+        />
+
+    <EditText
+        android:id="@+id/editEdad"
+        android:layout_width="0dp"
+        android:background="@color/white"
+        app:layout_constraintWidth_percent="0.6"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewEdad"
+        app:layout_constraintEnd_toEndOf="@id/guiaVertical1"/>
+
+    <TextView
+        android:id="@+id/textViewSexo"
+        android:text="Edad"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editEdad"
+        app:layout_constraintEnd_toEndOf="@id/guiaVertical1"
+        />
+
+    <EditText
+        android:id="@+id/editSexo"
+        android:layout_width="0dp"
+        android:background="@color/white"
+        app:layout_constraintWidth_percent="0.6"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewSexo"
+        app:layout_constraintEnd_toEndOf="@id/guiaVertical1"/>
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:text="Entrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editSexo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
