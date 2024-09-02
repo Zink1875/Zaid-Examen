@@ -8,22 +8,22 @@ import com.example.zaidaplicacin.DAOs.PerroDAO
 import com.example.zaidaplicacin.Entities.Perro
 
 @Database(entities = [Perro::class], version = 1)
-abstract class AppDatabase : RoomDatabase() {
+abstract class AppDataBases : RoomDatabase() {
 
     abstract fun PerroDAO() : PerroDAO
 
     companion object {
 
         @Volatile
-        private var INSTANCE : AppDatabase? = null
+        private var INSTANCE : AppDataBases? = null
 
-        fun getDatabase(context : Context) : AppDatabase {
+        fun getDatabase(context : Context) : AppDataBases {
 
             return INSTANCE ?: synchronized(this) {
 
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    AppDatabase::class.java,
+                    AppDataBases::class.java,
                     "AppDatabase"
                 ).build()
 

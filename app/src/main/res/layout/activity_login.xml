@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
-    android:background="@color/purpleclaro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=", LoginActivity">
+    android:background="@color/purpleclaro"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guiaVertical1"
@@ -30,9 +28,9 @@
 
     <TextView
         android:id="@+id/textViewTitulo"
-        android:text="Bienvenidos Perritos"
-        android:textColor="@color/white"
+        android:text="Hola Perritos"
         android:textSize="25sp"
+        android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,16 +38,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <ImageView
-        android:id="@+id/imagePerfil"
-        android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.4"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.2"
-        android:src="@drawable/perritod"
-        app:layout_constraintTop_toTopOf="@id/guiaHorizontal1"
-        app:layout_constraintEnd_toEndOf="@id/guiaVertical1"
-        />
+        <ImageView
+            android:id="@+id/imagenPerro"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.4"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.2"
+            android:src="@drawable/perritod"
+            app:layout_constraintTop_toTopOf="@id/guiaHorizontal1"
+            app:layout_constraintEnd_toEndOf="@id/guiaVertical1"/>
 
     <TextView
         android:id="@+id/viewnombreperrito"
@@ -128,7 +125,7 @@
 
     <Button
         android:id="@+id/buttonLogin"
-        android:text="Entrar"
+        android:text="Acceder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -141,5 +138,6 @@
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

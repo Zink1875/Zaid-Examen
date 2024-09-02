@@ -4,14 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zaidaplicacin.Entities.Perro
-import com.example.zaidaplicacin.POJOs.DatosPerrito
 import com.example.zaidaplicacin.databinding.ItemPerroBinding
 import com.google.android.material.snackbar.Snackbar
 
 
-class PerroAdapter(private var perro : ArrayList<Perro>) : RecyclerView.Adapter<PerroAdapter.ViewHolderUsuario>() {
+class PerroAdapter(private var perro : ArrayList<Perro>) : RecyclerView.Adapter<PerroAdapter.ViewHolderPerro>() {
 
-    inner class ViewHolderUsuario(val binding : ItemPerroBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolderPerro(val binding : ItemPerroBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(perro: Perro) {
 
@@ -35,14 +34,14 @@ class PerroAdapter(private var perro : ArrayList<Perro>) : RecyclerView.Adapter<
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderUsuario {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderPerro {
 
         val binding = ItemPerroBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolderUsuario(binding)
+        return ViewHolderPerro(binding)
 
     }
 
-    override fun onBindViewHolder(holder: ViewHolderUsuario, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolderPerro, position: Int) {
 
         holder.bind(perro[position])
 
@@ -54,7 +53,7 @@ class PerroAdapter(private var perro : ArrayList<Perro>) : RecyclerView.Adapter<
 
     }
 
-    fun updateUsuarios(nuevosPerros : ArrayList<Perro>) {
+    fun updatePerros(nuevosPerros: ArrayList<Perro>) {
 
         perro = nuevosPerros
         this.notifyDataSetChanged()

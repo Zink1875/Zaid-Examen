@@ -1,12 +1,17 @@
 package com.example.zaidaplicacin
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.zaidaplicacin.Adapters.PerroAdapter
+import com.example.zaidaplicacin.AppDataBases.AppDataBases
+import com.example.zaidaplicacin.Fragment.Fragment
+import com.example.zaidaplicacin.Repositories.MainRepositorio
+import com.example.zaidaplicacin.ViewModels.MainViewModel
+import com.example.zaidaplicacin.ViewModels.ViewModelFactory
+import com.example.zaidaplicacin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,28 +24,29 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        val adapter = UsuariosAdapter(ArrayList())
+        val adapter = PerroAdapter(ArrayList())
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
 
-        val viewModel : MainViewModel by viewModels {
-            ViewModelFactory(MainRepository(AppDatabase.getDatabase(this)))
+        val viewModel: MainViewModel by viewModels {
+            ViewModelFactory(MainRepositorio(AppDataBases.getDatabase(this)))
         }
 
-        binding.botonAbrirFragment.setOnClickListener {
+        binding.botonfragment.setOnClickListener {
 
             viewModel.datoAPasar = "Hola, este dato viene del activity"
 
-            EjemploFragment().show(supportFragmentManager, "ejemploFragment")
+            Fragment().show(supportFragmentManager, "Fragment")
 
         }
 
-        viewModel.selectUsuarioConPersona().observe(this, Observer { listaUsuarios ->
+        viewModel.selectDatosPerro().observe(this, Observer { listaPerro ->
 
-            adapter.updateUsuarios(ArrayList(listaUsuarios))
+            adapter.updatePerros(ArrayList(listaPerro))
 
         })
 
     }
 }
+
